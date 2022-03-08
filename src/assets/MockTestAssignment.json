@@ -1,0 +1,1070 @@
+{
+    "ResultData": {
+        "ctype": "page",
+        "uuid": "pageUUID",
+        "visibility": true,
+        "hooks": [
+            {
+                "type": "microservice",
+                "hookType": "afterInit",
+                "config": {
+                    "microserviceId": "getCiscoDebugPartOrOutComes",
+                    "requestMethod": "get",
+                    "isLocal": true,
+                    "LocalService": "assets/partDropDown.json",
+                    "params": {}
+                },
+                "responseDependents": {
+                    "onSuccess": {
+                        "actions": [
+                            {
+                                "type": "context",
+                                "config": {
+                                    "requestMethod": "add",
+                                    "key": "partDropData",
+                                    "data": "responseData"
+                                }
+                            },
+                            {
+                                "type": "updateComponent",
+                                "config": {
+                                    "key": "AddPartpartUUId",
+                                    "dropDownProperties": {
+                                        "options": "#partDropData"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "onFailure": {
+                        "actions": []
+                    }
+                }
+            },
+            {
+                "type": "microservice",
+                "hookType": "afterInit",
+                "config": {
+                    "microserviceId": "getCiscoDebugPartOrOutComes",
+                    "requestMethod": "get",
+                    "isLocal": true,
+                    "LocalService": "assets/footerDropDwon.json",
+                    "params": {}
+                },
+                "responseDependents": {
+                    "onSuccess": {
+                        "actions": [
+                            {
+                                "type": "context",
+                                "config": {
+                                    "requestMethod": "add",
+                                    "key": "footerDropData",
+                                    "data": "responseData"
+                                }
+                            },
+                            {
+                                "type": "updateComponent",
+                                "config": {
+                                    "key": "footerNativeDropdown",
+                                    "dropDownProperties": {
+                                        "options": "#footerDropData"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "onFailure": {
+                        "actions": []
+                    }
+                }
+            }
+        ],
+        "header": [
+            {
+                "ctype": "breadcrumb",
+                "breadcrumbs": [
+                    {
+                        "label": "Szombathely"
+                    },
+                    {
+                        "label": "Cisco"
+                    },
+                    {
+                        "label": "Cisco HU2"
+                    }
+                ]
+            },
+            {
+                "ctype": "toolbar",
+                "toolbarClass": "pagecontent-header",
+                "items": [
+                    {
+                        "ctype": "title",
+                        "uuid": "dellCarRepairDebugTitleUUID",
+                        "titleValue": "T&C",
+                        "titleClass": "section-title"
+                    },
+                    {
+                        "ctype": "spacer",
+                        "class": "empty-space"
+                    },
+                    {
+                        "ctype": "reqlistbutton",
+                        "iconButtonClass": "wishListButton",
+                        "text": "Wish List(0)",
+                        "icon": "shopping_cart",
+                        "iconClass": "header-icon",
+                        "actions": [
+                            {
+                                "type": "toggle",
+                                "eventSource": "click",
+                                "name": "subProcessRightNavref"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "items": [
+            {
+                "ctype": "title",
+                "uuid": "errorTitleUUID",
+                "titleClass": "error-title",
+                "isShown": false,
+                "containerId": "prebodysectionone"
+            },
+            {
+                "ctype": "taskPanel",
+                "containerId": "prebodysectiontwo",
+                "header": {
+                    "title": "Add Product Label to the Tray",
+                    "svgIcon": "description_icon",
+                    "iconClass": "active-header",
+                    "class": "po-specific",
+                    "statusIcon": "hourglass_empty",
+                    "statusClass": "incomplete-status"
+                },
+                "uuid": "AddProductLabeltotheTrayUUID",
+                "hideToggle": true,
+                "disabled": false,
+                "expanded": false,
+                "isblueBorder": true,
+                "actions": [],
+                "validations": [],
+                "items": [
+                    {
+                        "ctype": "label",
+                        "text": "Verify details and add it to the tray",
+                        "labelClass": "body-italic2"
+                    }
+                ],
+                "footer": [
+                    {
+                        "ctype": "button",
+                        "color": "primary",
+                        "text": "Complete",
+                        "class": "primary-btn",
+                        "uuid": "AddProductLabeltotheTrayCompleteUUID",
+                        "visibility": true,
+                        "disabled": false,
+                        "type": "submit",
+                        "hooks": [],
+                        "validations": [],
+                        "actions": [
+                            {
+                                "type": "updateComponent",
+                                "config": {
+                                    "key": "AddProductLabeltotheTrayUUID",
+                                    "properties": {
+                                        "expanded": false,
+                                        "disabled": false,
+                                        "header": {
+                                            "title": "Add Product Label to the tray",
+                                            "svgIcon": "description_icon",
+                                            "iconClass": "active-header",
+                                            "statusIcon": "check_circle",
+                                            "statusClass": "complete-status",
+                                            "class": "disable-text"
+                                        }
+                                    }
+                                },
+                                "eventSource": "click"
+                            },
+                            {
+                                "type": "updateComponent",
+                                "config": {
+                                    "key": "addProductLabelUUID",
+                                    "properties": {
+                                        "expanded": true
+                                    }
+                                },
+                                "eventSource": "click"
+                            },
+                            {
+                                "type": "updateComponent",
+                                "config": {
+                                    "key": "AddProductLabeltotheTrayCompleteUUID",
+                                    "properties": {
+                                        "disabled": true
+                                    }
+                                },
+                                "eventSource": "click"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ctype": "toolbar",
+                "toolbarClass": "creatorTask-Toolbar",
+                "hoverClass": "background-white",
+                "items": [
+                    {
+                        "ctype": "iconText",
+                        "hoverClass": "blue-icon",
+                        "svgIcon": "replace",
+                        "text": "Add Part",
+                        "iconTextClass": "creatorTask-Icontext",
+                        "uuid": "replaceIconUUID",
+                        "textClass": "heading3-regular greyish-black",
+                        "iconPosition": "top",
+                        "actions": [
+                            {
+                                "type": "createComponent",
+                                "config": {
+                                    "targetId": "pageUUID",
+                                    "containerId": "bodypage",
+                                    "data": {
+                                        "ctype": "taskPanel",
+                                        "header": {
+                                            "title": "Add Part",
+                                            "svgIcon": "replace",
+                                            "status": "",
+                                            "css": "color:black",
+                                            "statusIcon": "close",
+                                            "statusClass": "header-icon"
+                                        },
+                                        "splitView": true,
+                                        "verticalsplitView": true,
+                                        "expanded": "true",
+                                        "hideToggle": "true",
+                                        "collapsedHeight": "40px",
+                                        "expandedHeight": "40px",
+                                        "bodyclass": "splitView",
+                                        "panelClass": "overflow-show top-margin",
+                                        "leftDivclass": "width:50%",
+                                        "rightDivclass": "width:50%",
+                                        "taskPanelHeaderClass": "task-panel-header-color-light-grey",
+                                        "uuid": "softwareTaskUUID",
+                                        "visibility": true,
+                                        "topItems": [
+                                            {
+                                                "ctype": "iconText",
+                                                "imgtext": "Bezel",
+                                                "uuid": "bezelImgUUID",
+                                                "textClass": "ciscoTCFlexTxt",
+                                                "iconTextClass": "col-lg-10 hide",
+                                                "imageSrc": "assets/Images/bezel.png",
+                                                "pClass": "normal",
+                                                "disabled": false,
+                                                "hidden": false
+                                            },
+                                            {
+                                                "ctype": "iconText",
+                                                "imgtext": "Bumper",
+                                                "uuid": "bumperImgUUID",
+                                                "textClass": "ciscoTCFlexTxt",
+                                                "iconTextClass": "col-lg-10 hide",
+                                                "imageSrc": "../../../assets/Images/bumper.png",
+                                                "pClass": "normal",
+                                                "disabled": false,
+                                                "hidden": false
+                                            },
+                                            {
+                                                "ctype": "iconText",
+                                                "imgtext": "Label",
+                                                "uuid": "labelImgUUID",
+                                                "textClass": "ciscoTCFlexTxt",
+                                                "iconTextClass": "col-lg-10 hide",
+                                                "imageSrc": "../../../assets/Images/label.png",
+                                                "pClass": "normal",
+                                                "disabled": false,
+                                                "hidden": false
+                                            },
+                                            {
+                                                "ctype": "iconText",
+                                                "imgtext": "Cover",
+                                                "uuid": "coverImgUUID",
+                                                "textClass": "ciscoTCFlexTxt",
+                                                "iconTextClass": "col-lg-10 hide",
+                                                "imageSrc": "../../../assets/Images/cover.png",
+                                                "pClass": "normal",
+                                                "disabled": false,
+                                                "hidden": false
+                                            },
+                                            {
+                                                "ctype": "iconText",
+                                                "imgtext": "Screw",
+                                                "uuid": "screwImgUUID",
+                                                "textClass": "ciscoTCFlexTxt",
+                                                "iconTextClass": "col-lg-10 hide",
+                                                "imageSrc": "../../../assets/Images/screw.png",
+                                                "pClass": "normal",
+                                                "disabled": false,
+                                                "hidden": false
+                                            }
+                                        ],
+                                        "items": [
+                                            {
+                                                "ctype": "nativeDropdown",
+                                                "formGroupClass": "flex-container-full-width form-group-margin",
+                                                "dropdownClass": "dropdown-container textfield-container",
+                                                "uuid": "AddPartpartUUId",
+                                                "name": "addPartpart",
+                                                "dataSource": "#partDropData",
+                                                "displayValue": "partNumber",
+                                                "code": "partNumber",
+                                                "label": "Part",
+                                                "labelClass": "subtitle1 greyish-black",
+                                                "required": true,
+                                                "submitable": true,
+                                                "actions": [
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "userSelectedPartValue",
+                                                            "data": "elementControlValue"
+                                                        },
+                                                        "eventSource": "change"
+                                                    },
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "ciscoTCaddaprtqtyincriment",
+                                                            "data": "1"
+                                                        },
+                                                        "eventSource": "change"
+                                                    },
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "config": {
+                                                            "key": "qtynoUUID",
+                                                            "properties": {
+                                                                "value": "#ciscoTCaddaprtqtyincriment"
+                                                            }
+                                                        },
+                                                        "eventSource": "change"
+                                                    },
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "config": {
+                                                            "key": "ciscoQtyUUID#@",
+                                                            "properties": {
+                                                                "text": "1"
+                                                            }
+                                                        },
+                                                        "eventSource": "change"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "ctype": "nativeDropdown",
+                                                "formGroupClass": "flex-container-full-width form-group-margin",
+                                                "dropdownClass": "dropdown-container textfield-container",
+                                                "uuid": "AddPartDefectUUId",
+                                                "name": "addPartDefect",
+                                                "label": "Defect",
+                                                "labelClass": "subtitle1 greyish-black",
+                                                "required": true,
+                                                "submitable": true,
+                                                "options": [
+                                                    {
+                                                        "code": "Cosmetic-Damage",
+                                                        "displayValue": "Cosmetic-Damage"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "userSelectedDefectValue",
+                                                            "data": "elementControlValue"
+                                                        },
+                                                        "eventSource": "change"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "ctype": "nativeDropdown",
+                                                "formGroupClass": "flex-container-full-width form-group-margin",
+                                                "dropdownClass": "dropdown-container textfield-container",
+                                                "uuid": "AddPartfaUUId",
+                                                "name": "addPartFa",
+                                                "label": "FA",
+                                                "labelClass": "subtitle1 greyish-black",
+                                                "required": true,
+                                                "submitable": true,
+                                                "options": [
+                                                    {
+                                                        "code": "Cosmetic-Damage",
+                                                        "displayValue": "SN_NOT_APPLICABLECOMPONENT_DAMAGED"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "userSelectedFAValue",
+                                                            "data": "elementControlValue"
+                                                        },
+                                                        "eventSource": "change"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "rightItems": [
+                                            {
+                                                "ctype": "textField",
+                                                "formGroupClass": "addPart-right-content-container form-group-margin",
+                                                "uuid": "AddPartdescriptionUUID",
+                                                "name": "addPartDescription",
+                                                "type": "text",
+                                                "label": "Description",
+                                                "labelClass": "greyish-black col-2 p-0",
+                                                "labelPosition": "left",
+                                                "actions": [
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "descriptionData",
+                                                            "data": "elementControlValue"
+                                                        },
+                                                        "eventSource": "blur"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "ctype": "textField",
+                                                "formGroupClass": "addPart-right-content-container",
+                                                "uuid": "AddPartrewINSTRUUID",
+                                                "name": "addPartRewINSTR",
+                                                "type": "text",
+                                                "label": "REW_INSTR",
+                                                "labelClass": "greyish-black col-2 p-0",
+                                                "labelPosition": "left",
+                                                "actions": [
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "rewINSTRData",
+                                                            "data": "elementControlValue"
+                                                        },
+                                                        "eventSource": "blur"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "ctype": "flexFields",
+                                                "uuid": "AddPartSourceQtyUUId",
+                                                "flexClass": "addPart-qty-content-container",
+                                                "items": [
+                                                    {
+                                                        "ctype": "textField",
+                                                        "formGroupClass": "d-flex",
+                                                        "uuid": "qtynoUUID",
+                                                        "parentUUID": "ciscoAddPartSourceQtyUUID",
+                                                        "hooks": [],
+                                                        "validations": [],
+                                                        "actions": [],
+                                                        "type": "text",
+                                                        "disabled": false,
+                                                        "inLine": true,
+                                                        "submitable": true,
+                                                        "readonly": true,
+                                                        "label": "Qty",
+                                                        "labelClass": "greyish-black label-width p-0",
+                                                        "labelPosition": "left",
+                                                        "name": "mbctnumber",
+                                                        "textfieldClass": "greyish-black ",
+                                                        "value": ""
+                                                    },
+                                                    {
+                                                        "ctype": "iconbutton",
+                                                        "text": "",
+                                                        "uuid": "addQytUUID",
+                                                        "parentUUID": "ciscoAddPartSourceQtyUUID",
+                                                        "visibility": true,
+                                                        "disabled": false,
+                                                        "type": "submit",
+                                                        "hooks": [],
+                                                        "validations": [],
+                                                        "icon": "add",
+                                                        "iconClass": "addQtyicon",
+                                                        "iconButtonClass": "add-Qty-iconBtn",
+                                                        "actions": [
+                                                            {
+                                                                "type": "addPartQunatityAddby1",
+                                                                "eventSource": "click"
+                                                            },
+                                                            {
+                                                                "type": "updateComponent",
+                                                                "config": {
+                                                                    "key": "qtynoUUID",
+                                                                    "properties": {
+                                                                        "value": "#ciscoTCaddaprtqtyincriment"
+                                                                    }
+                                                                },
+                                                                "eventSource": "click"
+                                                            },
+                                                            {
+                                                                "type": "updateComponent",
+                                                                "config": {
+                                                                    "key": "ciscoQtyUUID#@",
+                                                                    "properties": {
+                                                                        "text": "#ciscoTCaddaprtqtyincriment"
+                                                                    }
+                                                                },
+                                                                "eventSource": "click"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "ctype": "iconbutton",
+                                                        "text": "",
+                                                        "uuid": "subQytUUID",
+                                                        "parentUUID": "ciscoAddPartSourceQtyUUID",
+                                                        "visibility": true,
+                                                        "disabled": false,
+                                                        "type": "submit",
+                                                        "hooks": [],
+                                                        "validations": [],
+                                                        "icon": "remove",
+                                                        "iconClass": "addQtyicon",
+                                                        "iconButtonClass": "add-Qty-iconBtn",
+                                                        "actions": [
+                                                            {
+                                                                "type": "subPartQunatityAddby1",
+                                                                "eventSource": "click"
+                                                            },
+                                                            {
+                                                                "type": "updateComponent",
+                                                                "config": {
+                                                                    "key": "qtynoUUID",
+                                                                    "properties": {
+                                                                        "value": "#ciscoTCaddaprtqtyincriment"
+                                                                    }
+                                                                },
+                                                                "eventSource": "click"
+                                                            },
+                                                            {
+                                                                "type": "updateComponent",
+                                                                "config": {
+                                                                    "key": "ciscoQtyUUID#@",
+                                                                    "properties": {
+                                                                        "text": "#ciscoTCaddaprtqtyincriment"
+                                                                    }
+                                                                },
+                                                                "eventSource": "click"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "ctype": "flexFields",
+                                                "containerId": "expansionPanelContentFirstHalf",
+                                                "uuid": "ciscoFailCodeTitleUUID",
+                                                "flexClass": "label-container-radio-group-parent",
+                                                "items": [
+                                                    {
+                                                        "ctype": "flexFields",
+                                                        "uuid": "ciscoQtyTableUUID#@",
+                                                        "flexClass": "label-container-radio-group-grid-3",
+                                                        "items": [
+                                                            {
+                                                                "ctype": "label",
+                                                                "text": "Source",
+                                                                "labelClass": "greyish-black pl-1"
+                                                            },
+                                                            {
+                                                                "ctype": "label",
+                                                                "text": "Qty",
+                                                                "labelClass": "greyish-black"
+                                                            },
+                                                            {
+                                                                "ctype": "label",
+                                                                "text": "Stock",
+                                                                "labelClass": "greyish-black"
+                                                            },
+                                                            {
+                                                                "ctype": "iconText",
+                                                                "uuid": "sourceIconUUID#@",
+                                                                "icon": "shopping_cart",
+                                                                "text": "Warehouse",
+                                                                "iconPosition": "after",
+                                                                "textClass": "body greyish-black",
+                                                                "inLine": true,
+                                                                "iconClass": "ciscoTC_shoppingcarticon margin-bottom-5 header-icon"
+                                                            },
+                                                            {
+                                                                "ctype": "label",
+                                                                "uuid": "ciscoQtyUUID#@",
+                                                                "parentUUID": "ciscoQtyTableUUID#@",
+                                                                "text": "",
+                                                                "labelClass": "greyish-black"
+                                                            },
+                                                            {
+                                                                "ctype": "label",
+                                                                "uuid": "ciscoDebugStockQty#@",
+                                                                "parentUUID": "ciscoQtyTableUUID#@",
+                                                                "text": "12",
+                                                                "labelClass": "cisco-stock"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "footer": [
+                                            {
+                                                "ctype": "iconbutton",
+                                                "text": "Reset Form",
+                                                "uuid": "RemoveresetUUID",
+                                                "visibility": true,
+                                                "checkGroupValidity": false,
+                                                "disabled": false,
+                                                "type": "submit",
+                                                "hooks": [],
+                                                "validations": [],
+                                                "icon": "not_interested",
+                                                "iconClass": "resetIcon",
+                                                "actions": [
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "config": {
+                                                            "key": "AddPartpartUUId",
+                                                            "fieldProperties": {
+                                                                "addPartpart": "-select-"
+                                                            }
+                                                        },
+                                                        "eventSource": "click"
+                                                    },
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "config": {
+                                                            "key": "AddPartDefectUUId",
+                                                            "fieldProperties": {
+                                                                "addPartDefect": "-select-"
+                                                            }
+                                                        },
+                                                        "eventSource": "click"
+                                                    },
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "config": {
+                                                            "key": "AddPartfaUUId",
+                                                            "fieldProperties": {
+                                                                "addPartFa": "-select-"
+                                                            }
+                                                        },
+                                                        "eventSource": "click"
+                                                    },
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "config": {
+                                                            "key": "AddPartdescriptionUUID",
+                                                            "fieldProperties": {
+                                                                "addPartDescription": ""
+                                                            }
+                                                        },
+                                                        "eventSource": "click"
+                                                    },
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "descriptionData",
+                                                            "data": ""
+                                                        },
+                                                        "eventSource": "click"
+                                                    },
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "config": {
+                                                            "key": "AddPartrewINSTRUUID",
+                                                            "fieldProperties": {
+                                                                "addPartRewINSTR": ""
+                                                            }
+                                                        },
+                                                        "eventSource": "click"
+                                                    },
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "rewINSTRData",
+                                                            "data": ""
+                                                        },
+                                                        "eventSource": "click"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "ctype": "button",
+                                                "color": "primary",
+                                                "text": "Complete",
+                                                "uuid": "softwareCompleteUUID",
+                                                "name": "SoftwareCompletebtn",
+                                                "parentuuid": "softwareTaskUUID",
+                                                "visibility": true,
+                                                "disabled": true,
+                                                "submitable": true,
+                                                "checkGroupValidity": true,
+                                                "type": "submit",
+                                                "hooks": [],
+                                                "validations": [],
+                                                "actions": [
+                                                    {
+                                                        "type": "deleteComponent",
+                                                        "config": {
+                                                            "key": "softwareTaskUUID"
+                                                        },
+                                                        "eventSource": "click"
+                                                    },
+                                                    {
+                                                        "type": "createComponent",
+                                                        "config": {
+                                                            "targetId": "pageUUID",
+                                                            "containerId": "prebodysectiontwo",
+                                                            "data": {
+                                                                "ctype": "taskPanel",
+                                                                "splitView": true,
+                                                                "uuid": "softwareProcessUUID",
+                                                                "updateUUID": true,
+                                                                "isyellowBorder": true,
+                                                                "uniqueUUID": true,
+                                                                "columnWiseTitle": true,
+                                                                "header": {
+                                                                    "svgIcon": "replace",
+                                                                    "css": "color:black",
+                                                                    "status": "Daignosis",
+                                                                    "statusIcon": "check_circle",
+                                                                    "statusClass": "complete-status",
+                                                                    "class": "mat-expansion-panel-header-title heading2"
+                                                                },
+                                                                "headerTitleLabels": [
+                                                                    "Add Part - ",
+                                                                    "",
+                                                                    "",
+                                                                    ""
+                                                                ],
+                                                                "headerTitleValues": [
+                                                                    "#userSelectedPartValue",
+                                                                    "",
+                                                                    "",
+                                                                    ""
+                                                                ],
+                                                                "inputClasses": [
+                                                                    "CiscoTCparent1",
+                                                                    ""
+                                                                ],
+                                                                "expanded": false,
+                                                                "hideToggle": true,
+                                                                "collapsedHeight": "40px",
+                                                                "expandedHeight": "40px",
+                                                                "bodyclass": "splitView",
+                                                                "taskpanelfooterclass": "d-flex justify-content-between",
+                                                                "panelClass": "overflow-show",
+                                                                "leftDivclass": "width:50%;",
+                                                                "rightDivclass": "width:50%",
+                                                                "taskPanelHeaderClass": "task-panel-header-color-light-grey",
+                                                                "visibility": false,
+                                                                "items": [
+                                                                    {
+                                                                        "ctype": "flexFields",
+                                                                        "flexClass": "cisco-debug-label-container-30-50",
+                                                                        "items": [
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "Part",
+                                                                                "labelClass": "subtitle1"
+                                                                            },
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "#userSelectedPartValue",
+                                                                                "labelClass": "greyish-black",
+                                                                                "labelPosition": "left"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "ctype": "flexFields",
+                                                                        "flexClass": "cisco-debug-label-container-30-50",
+                                                                        "items": [
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "Reason",
+                                                                                "labelClass": "subtitle1"
+                                                                            },
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "Remanufacturing",
+                                                                                "labelClass": "greyish-black",
+                                                                                "labelPosition": "left"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "ctype": "flexFields",
+                                                                        "flexClass": "cisco-debug-label-container-30-50",
+                                                                        "items": [
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "Defect",
+                                                                                "labelClass": "subtitle1"
+                                                                            },
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "#userSelectedDefectValue",
+                                                                                "labelClass": "greyish-black",
+                                                                                "labelPosition": "left"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "ctype": "flexFields",
+                                                                        "flexClass": "cisco-debug-label-container-30-50",
+                                                                        "items": [
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "FA",
+                                                                                "labelClass": "subtitle1"
+                                                                            },
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "#userSelectedFAValue",
+                                                                                "labelClass": "greyish-black",
+                                                                                "labelPosition": "left"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "rightItems": [
+                                                                    {
+                                                                        "ctype": "flexFields",
+                                                                        "flexClass": "cisco-debug-label-container-30-50",
+                                                                        "items": [
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "Description",
+                                                                                "labelClass": "subtitle1"
+                                                                            },
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "#descriptionData",
+                                                                                "labelClass": "greyish-black",
+                                                                                "labelPosition": "left"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "ctype": "flexFields",
+                                                                        "flexClass": "cisco-debug-label-container-30-50",
+                                                                        "items": [
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "REW_INSTR",
+                                                                                "labelClass": "subtitle1"
+                                                                            },
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "#rewINSTRData",
+                                                                                "labelClass": "greyish-black",
+                                                                                "labelPosition": "left"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "ctype": "flexFields",
+                                                                        "containerId": "expansionPanelContentFirstHalf",
+                                                                        "uuid": "ciscoFailCodeTitleUUID",
+                                                                        "flexClass": "label-container-radio-group-parent",
+                                                                        "items": [
+                                                                            {
+                                                                                "ctype": "flexFields",
+                                                                                "uuid": "ciscoQtyTableUUID#@",
+                                                                                "flexClass": "label-container-radio-group-grid-3",
+                                                                                "items": [
+                                                                                    {
+                                                                                        "ctype": "label",
+                                                                                        "text": "Source",
+                                                                                        "labelClass": "greyish-black pl-1"
+                                                                                    },
+                                                                                    {
+                                                                                        "ctype": "label",
+                                                                                        "text": "Qty",
+                                                                                        "labelClass": "greyish-black"
+                                                                                    },
+                                                                                    {
+                                                                                        "ctype": "label",
+                                                                                        "text": "Stock",
+                                                                                        "labelClass": "greyish-black"
+                                                                                    },
+                                                                                    {
+                                                                                        "ctype": "iconText",
+                                                                                        "uuid": "sourceIconUUID#@",
+                                                                                        "icon": "shopping_cart",
+                                                                                        "text": "Warehouse",
+                                                                                        "iconPosition": "after",
+                                                                                        "textClass": "body greyish-black",
+                                                                                        "inLine": true,
+                                                                                        "iconClass": "ciscoTC_shoppingcarticon margin-bottom-5 header-icon"
+                                                                                    },
+                                                                                    {
+                                                                                        "ctype": "label",
+                                                                                        "uuid": "ciscoQtyUUID#@",
+                                                                                        "parentUUID": "ciscoQtyTableUUID#@",
+                                                                                        "text": "",
+                                                                                        "labelClass": "greyish-black"
+                                                                                    },
+                                                                                    {
+                                                                                        "ctype": "label",
+                                                                                        "uuid": "ciscoDebugStockQty#@",
+                                                                                        "parentUUID": "ciscoQtyTableUUID#@",
+                                                                                        "text": "12",
+                                                                                        "labelClass": "cisco-stock"
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "footer": [
+                                                                    {
+                                                                        "ctype": "iconbutton",
+                                                                        "iconButtonClass": "footer-bin body primary-btn",
+                                                                        "text": "Delete",
+                                                                        "uuid": "deleteUUID",
+                                                                        "visibility": true,
+                                                                        "disabled": false,
+                                                                        "type": "submit",
+                                                                        "checkGroupValidity": true,
+                                                                        "hooks": [],
+                                                                        "validations": [],
+                                                                        "icon": "delete",
+                                                                        "actions": [
+                                                                            {
+                                                                                "type":"condition",
+                                                                                "config":{
+                                                                                    "operation":"isEqual",
+                                                                                    "rhs":"softwareProcessUUID",
+                                                                                    "lhs":"#currentTaskUUID"
+                                                                                },
+                                                                                "eventSource":"click",
+                                                                                "responseDependents":{
+                                                                                    "onSuccess":{
+                                                                                        "actions":[]
+                                                                                    },
+                                                                                    "onFailure":{
+                                                                                        "actions":[
+                                                                                            {
+                                                                                                "type":"deleteComponent",
+                                                                                                "config":{
+                                                                                                    "key":"softwareProcessUUID"
+                                                                                                },
+                                                                                                "eventSource":"click"
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "ctype": "button",
+                                                                        "color": "primary",
+                                                                        "class": "primary-btn",
+                                                                        "text": "Complete"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        "eventSource": "click"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                "eventSource": "click"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "footer": [
+            {
+                "ctype": "toolbar",
+                "toolbarClass": "pagecontent-footer",
+                "items": [
+                    {
+                        "ctype": "iconbutton",
+                        "iconButtonClass": "footer-save body primary-btn",
+                        "text": "Save & Exit",
+                        "uuid": "saveUUID",
+                        "visibility": true,
+                        "disabled": false,
+                        "type": "submit",
+                        "hooks": [],
+                        "validations": [],
+                        "icon": "close",
+                        "actions": []
+                    },
+                    {
+                        "ctype": "iconText",
+                        "iconTextClass": "footer-addNote addNoteCls body",
+                        "icon": "add_comment",
+                        "text": "Add Note",
+                        "uuid": "IconUUID"
+                    },
+                    {
+                        "ctype": "spacer",
+                        "class": "empty-space"
+                    },
+                    {
+                        "ctype": "iconbutton",
+                        "uuid": "discrepancyPauseUUID",
+                        "visibility": true,
+                        "disabled": false,
+                        "type": "submit",
+                        "icon": "pause",
+                        "iconButtonClass": "footer-save"
+                    },
+                    {
+                        "ctype": "nativeDropdown",
+                        "uuid": "footerNativeDropdown",
+                        "dropdownClass": "footer-dropdown dropdown-container body2",
+                        "dataSource": "#footerDropData",
+                        "code": "partName",
+                        "displayValue": "partName"
+                    },
+                    {
+                        "ctype": "button",
+                        "class": "primary-btn",
+                        "color": "primary",
+                        "text": "Time Out",
+                        "buttonClass": "footer-button"
+                    }
+                ]
+            }
+        ]
+    },
+    "Result": "SUCCESS"
+}
