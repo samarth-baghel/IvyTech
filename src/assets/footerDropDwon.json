@@ -1,0 +1,30 @@
+{
+    "message": null,
+    "data": [
+        {
+            "partName": "Fail Rew"
+        },
+        {
+            "partName": "Fail CFG "
+        },
+        {
+            "partName": "Ret DGI "
+        },
+        {
+            "partName": "FA"
+        },
+        {
+            "partName": "Pass FQA"
+        },
+        {
+            "partName": "Pass HPOT"
+        },
+        {
+            "partName": "Painting"
+        },
+        {
+            "partName": "TC_Stop"
+        }
+    ],
+    "status": true
+}
