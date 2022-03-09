@@ -267,7 +267,18 @@
                                                 "imageSrc": "assets/Images/bezel.png",
                                                 "pClass": "normal",
                                                 "disabled": false,
-                                                "hidden": false
+                                                "hidden": false,
+                                                "actions": [
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "imagesData",
+                                                            "data": "Bezel"
+                                                        },
+                                                        "eventSource": "click"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "ctype": "iconText",
@@ -278,7 +289,18 @@
                                                 "imageSrc": "../../../assets/Images/bumper.png",
                                                 "pClass": "normal",
                                                 "disabled": false,
-                                                "hidden": false
+                                                "hidden": false,
+                                                "actions": [
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "imagesData",
+                                                            "data": "Bumper"
+                                                        },
+                                                        "eventSource": "click"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "ctype": "iconText",
@@ -289,7 +311,18 @@
                                                 "imageSrc": "../../../assets/Images/label.png",
                                                 "pClass": "normal",
                                                 "disabled": false,
-                                                "hidden": false
+                                                "hidden": false,
+                                                "actions": [
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "imagesData",
+                                                            "data": "Label"
+                                                        },
+                                                        "eventSource": "click"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "ctype": "iconText",
@@ -300,7 +333,18 @@
                                                 "imageSrc": "../../../assets/Images/cover.png",
                                                 "pClass": "normal",
                                                 "disabled": false,
-                                                "hidden": false
+                                                "hidden": false,
+                                                "actions": [
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "imagesData",
+                                                            "data": "Cover"
+                                                        },
+                                                        "eventSource": "click"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "ctype": "iconText",
@@ -311,7 +355,18 @@
                                                 "imageSrc": "../../../assets/Images/screw.png",
                                                 "pClass": "normal",
                                                 "disabled": false,
-                                                "hidden": false
+                                                "hidden": false,
+                                                "actions": [
+                                                    {
+                                                        "type": "context",
+                                                        "config": {
+                                                            "requestMethod": "add",
+                                                            "key": "imagesData",
+                                                            "data": "Screw"
+                                                        },
+                                                        "eventSource": "click"
+                                                    }
+                                                ]
                                             }
                                         ],
                                         "items": [
@@ -792,6 +847,23 @@
                                                                         "items": [
                                                                             {
                                                                                 "ctype": "label",
+                                                                                "text": "Sub Assm",
+                                                                                "labelClass": "subtitle1"
+                                                                            },
+                                                                            {
+                                                                                "ctype": "label",
+                                                                                "text": "#imagesData",
+                                                                                "labelClass": "greyish-black",
+                                                                                "labelPosition": "left"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "ctype": "flexFields",
+                                                                        "flexClass": "cisco-debug-label-container-30-50",
+                                                                        "items": [
+                                                                            {
+                                                                                "ctype": "label",
                                                                                 "text": "Part",
                                                                                 "labelClass": "subtitle1"
                                                                             },
@@ -930,7 +1002,7 @@
                                                                                         "ctype": "label",
                                                                                         "uuid": "ciscoQtyUUID#@",
                                                                                         "parentUUID": "ciscoQtyTableUUID#@",
-                                                                                        "text": "",
+                                                                                        "text": "#ciscoTCaddaprtqtyincriment",
                                                                                         "labelClass": "greyish-black"
                                                                                     },
                                                                                     {
@@ -960,25 +1032,25 @@
                                                                         "icon": "delete",
                                                                         "actions": [
                                                                             {
-                                                                                "type":"condition",
-                                                                                "config":{
-                                                                                    "operation":"isEqual",
-                                                                                    "rhs":"softwareProcessUUID",
-                                                                                    "lhs":"#currentTaskUUID"
+                                                                                "type": "condition",
+                                                                                "config": {
+                                                                                    "operation": "isEqual",
+                                                                                    "rhs": "softwareProcessUUID",
+                                                                                    "lhs": "#currentTaskUUID"
                                                                                 },
-                                                                                "eventSource":"click",
-                                                                                "responseDependents":{
-                                                                                    "onSuccess":{
-                                                                                        "actions":[]
+                                                                                "eventSource": "click",
+                                                                                "responseDependents": {
+                                                                                    "onSuccess": {
+                                                                                        "actions": []
                                                                                     },
-                                                                                    "onFailure":{
-                                                                                        "actions":[
+                                                                                    "onFailure": {
+                                                                                        "actions": [
                                                                                             {
-                                                                                                "type":"deleteComponent",
-                                                                                                "config":{
-                                                                                                    "key":"softwareProcessUUID"
+                                                                                                "type": "deleteComponent",
+                                                                                                "config": {
+                                                                                                    "key": "softwareProcessUUID"
                                                                                                 },
-                                                                                                "eventSource":"click"
+                                                                                                "eventSource": "click"
                                                                                             }
                                                                                         ]
                                                                                     }
