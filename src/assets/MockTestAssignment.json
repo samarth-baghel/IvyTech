@@ -260,12 +260,14 @@
                                         "topItems": [
                                             {
                                                 "ctype": "iconText",
+                                                "hoverClass": "blue-icon",
                                                 "imgtext": "Bezel",
                                                 "uuid": "bezelImgUUID",
                                                 "textClass": "ciscoTCFlexTxt",
                                                 "iconTextClass": "col-lg-10 ",
                                                 "imageSrc": "assets/Images/bezel.png",
                                                 "pClass": "normal",
+                                                "label": "Bezel",
                                                 "disabled": false,
                                                 "hidden": false,
                                                 "actions": [
@@ -277,12 +279,23 @@
                                                             "data": "Bezel"
                                                         },
                                                         "eventSource": "click"
+                                                    },
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "eventSource": "click",
+                                                        "config": {
+                                                            "key": "bezelImgUUID",
+                                                            "properties": {
+                                                                "pClass": "active"
+                                                            }
+                                                        }
                                                     }
                                                 ]
                                             },
                                             {
                                                 "ctype": "iconText",
                                                 "imgtext": "Bumper",
+                                                "hoverClass": "blue-icon",
                                                 "uuid": "bumperImgUUID",
                                                 "textClass": "ciscoTCFlexTxt",
                                                 "iconTextClass": "col-lg-10 ",
@@ -299,12 +312,23 @@
                                                             "data": "Bumper"
                                                         },
                                                         "eventSource": "click"
+                                                    },
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "eventSource": "click",
+                                                        "config": {
+                                                            "key": "bumperImgUUID",
+                                                            "properties": {
+                                                                "pClass": "active"
+                                                            }
+                                                        }
                                                     }
                                                 ]
                                             },
                                             {
                                                 "ctype": "iconText",
                                                 "imgtext": "Label",
+                                                "hoverClass": "blue-icon",
                                                 "uuid": "labelImgUUID",
                                                 "textClass": "ciscoTCFlexTxt",
                                                 "iconTextClass": "col-lg-10 ",
@@ -321,12 +345,23 @@
                                                             "data": "Label"
                                                         },
                                                         "eventSource": "click"
-                                                    }
+                                                    },
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "eventSource": "click",
+                                                        "config": {
+                                                          "key": "labelImgUUID",
+                                                          "properties": {
+                                                            "pClass": "active"
+                                                          }
+                                                        }
+                                                      }
                                                 ]
                                             },
                                             {
                                                 "ctype": "iconText",
                                                 "imgtext": "Cover",
+                                                "hoverClass": "blue-icon",
                                                 "uuid": "coverImgUUID",
                                                 "textClass": "ciscoTCFlexTxt",
                                                 "iconTextClass": "col-lg-10 ",
@@ -343,13 +378,24 @@
                                                             "data": "Cover"
                                                         },
                                                         "eventSource": "click"
-                                                    }
+                                                    },
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "eventSource": "click",
+                                                        "config": {
+                                                          "key": "coverImgUUID",
+                                                          "properties": {
+                                                            "pClass": "active"
+                                                          }
+                                                        }
+                                                      }
                                                 ]
                                             },
                                             {
                                                 "ctype": "iconText",
                                                 "imgtext": "Screw",
                                                 "uuid": "screwImgUUID",
+                                                "hoverClass": "blue-icon",
                                                 "textClass": "ciscoTCFlexTxt",
                                                 "iconTextClass": "col-lg-10 ",
                                                 "imageSrc": "../../../assets/Images/screw.png",
@@ -365,7 +411,17 @@
                                                             "data": "Screw"
                                                         },
                                                         "eventSource": "click"
-                                                    }
+                                                    },
+                                                    {
+                                                        "type": "updateComponent",
+                                                        "eventSource": "click",
+                                                        "config": {
+                                                          "key": "screwImgUUID",
+                                                          "properties": {
+                                                            "pClass": "active"
+                                                          }
+                                                        }
+                                                      }
                                                 ]
                                             }
                                         ],
@@ -464,7 +520,7 @@
                                                 "submitable": true,
                                                 "options": [
                                                     {
-                                                        "code": "Cosmetic-Damage",
+                                                        "code": "SN_NOT_APPLICABLECOMPONENT_DAMAGED",
                                                         "displayValue": "SN_NOT_APPLICABLECOMPONENT_DAMAGED"
                                                     }
                                                 ],
@@ -489,7 +545,7 @@
                                                 "name": "addPartDescription",
                                                 "type": "text",
                                                 "label": "Description",
-                                                "labelClass": "greyish-black col-2 p-0",
+                                                "labelClass": "subtitle1 greyish-black",
                                                 "labelPosition": "left",
                                                 "actions": [
                                                     {
@@ -510,7 +566,7 @@
                                                 "name": "addPartRewINSTR",
                                                 "type": "text",
                                                 "label": "REW_INSTR",
-                                                "labelClass": "greyish-black col-2 p-0",
+                                                "labelClass": "subtitle1 greyish-black",
                                                 "labelPosition": "left",
                                                 "actions": [
                                                     {
