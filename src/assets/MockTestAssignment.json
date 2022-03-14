@@ -257,6 +257,15 @@
                                         "taskPanelHeaderClass": "task-panel-header-color-light-grey",
                                         "uuid": "softwareTaskUUID",
                                         "visibility": true,
+                                        "actions": [
+                                            {
+                                                "type": "deleteComponent",
+                                                "eventSource": "click",
+                                                "config": {
+                                                    "key": "softwareTaskUUID"
+                                                }
+                                            }
+                                        ],
                                         "topItems": [
                                             {
                                                 "ctype": "iconText",
@@ -350,12 +359,12 @@
                                                         "type": "updateComponent",
                                                         "eventSource": "click",
                                                         "config": {
-                                                          "key": "labelImgUUID",
-                                                          "properties": {
-                                                            "pClass": "active"
-                                                          }
+                                                            "key": "labelImgUUID",
+                                                            "properties": {
+                                                                "pClass": "active"
+                                                            }
                                                         }
-                                                      }
+                                                    }
                                                 ]
                                             },
                                             {
@@ -383,12 +392,12 @@
                                                         "type": "updateComponent",
                                                         "eventSource": "click",
                                                         "config": {
-                                                          "key": "coverImgUUID",
-                                                          "properties": {
-                                                            "pClass": "active"
-                                                          }
+                                                            "key": "coverImgUUID",
+                                                            "properties": {
+                                                                "pClass": "active"
+                                                            }
                                                         }
-                                                      }
+                                                    }
                                                 ]
                                             },
                                             {
@@ -416,12 +425,12 @@
                                                         "type": "updateComponent",
                                                         "eventSource": "click",
                                                         "config": {
-                                                          "key": "screwImgUUID",
-                                                          "properties": {
-                                                            "pClass": "active"
-                                                          }
+                                                            "key": "screwImgUUID",
+                                                            "properties": {
+                                                                "pClass": "active"
+                                                            }
                                                         }
-                                                      }
+                                                    }
                                                 ]
                                             }
                                         ],
