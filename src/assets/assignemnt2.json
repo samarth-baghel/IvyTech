@@ -17,7 +17,7 @@
                     "userName": "#userAccountInfo.PersonalDetails.USERID"
                 },
                 "isLocal":true,
-                "LocalService":"assets/MockTestAssignment.json"
+                "LocalService":"assets/MockTestAssignment.json "
             },
             "responseDependents":{
                 "onSuccess":{

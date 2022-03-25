@@ -1084,42 +1084,27 @@
                                                                 ],
                                                                 "footer": [
                                                                     {
-                                                                        "ctype": "iconbutton",
-                                                                        "iconButtonClass": "footer-bin body primary-btn",
+                                                                        "ctype": "button",
+                                                                        "color":"danger",
+                                                                        "class":"btn-danger",
+                                                                        "iconClass": "footer-save body2 danger-btn saveDraftDeleteCls",
                                                                         "text": "Delete",
+                                                                        "iconPosition":"after",
                                                                         "uuid": "deleteUUID",
                                                                         "visibility": true,
                                                                         "disabled": false,
                                                                         "type": "submit",
-                                                                        "checkGroupValidity": true,
+                                                                        "isIcon":true,
                                                                         "hooks": [],
                                                                         "validations": [],
                                                                         "icon": "delete",
                                                                         "actions": [
                                                                             {
-                                                                                "type": "condition",
+                                                                                "type": "deleteComponent",
                                                                                 "config": {
-                                                                                    "operation": "isEqual",
-                                                                                    "rhs": "softwareProcessUUID",
-                                                                                    "lhs": "#currentTaskUUID"
+                                                                                    "key": "softwareProcessUUID"
                                                                                 },
-                                                                                "eventSource": "click",
-                                                                                "responseDependents": {
-                                                                                    "onSuccess": {
-                                                                                        "actions": []
-                                                                                    },
-                                                                                    "onFailure": {
-                                                                                        "actions": [
-                                                                                            {
-                                                                                                "type": "deleteComponent",
-                                                                                                "config": {
-                                                                                                    "key": "softwareProcessUUID"
-                                                                                                },
-                                                                                                "eventSource": "click"
-                                                                                            }
-                                                                                        ]
-                                                                                    }
-                                                                                }
+                                                                                "eventSource": "click"
                                                                             }
                                                                         ]
                                                                     },
@@ -1182,7 +1167,13 @@
                         "disabled": false,
                         "type": "submit",
                         "icon": "pause",
-                        "iconButtonClass": "footer-save"
+                        "iconButtonClass": "footer-save",
+                        "actions":[
+                            {
+                                "type": "showOLEPausebuttonInScreen",
+                                "eventSource": "click"
+                              }
+                        ]
                     },
                     {
                         "ctype": "nativeDropdown",
